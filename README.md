@@ -1,5 +1,6 @@
 # my-sample-controller-and-operator-k8s
 This is my sample controller and operator in k8s
+
 Concept:
 1. Api-watcher Controller will listen on Flask-app, every PUT event on Flask-app, controller will trigger update ( or create if Crds kind resources not exist) Crds kind resources InforZ
 2. Operator watch InforZ resources (if it's created or updated) and collect data from spec.data, spec.personal and spec.gitrepo
