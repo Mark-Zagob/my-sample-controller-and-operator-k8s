@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: operator-crds
+  name: operator-crds
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: operator-crds
+  template:
+    metadata:
+      labels:
+        app: operator-crds
+    spec:
+      serviceAccountName: python-operator-sa
+      containers:
+      - name: operator-crds
+        image: dzagob/python_controller:operator-crds-v3
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2000Mi
+          requests:
+            cpu: 1000m
+            memory: 2000Mi

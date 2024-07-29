@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flask-production
+  name: flask-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-production
+  template:
+    metadata:
+      labels:
+        app: flask-production
+    spec:
+      containers:
+      - name: flask-production
+        image: dzagob/python_app:flask-production-v3
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 100m
+            memory: 300Mi

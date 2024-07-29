@@ -1,0 +1,6 @@
+kubernetes
+pick
+requests
+python-socketio
+asyncio
+aiohttp

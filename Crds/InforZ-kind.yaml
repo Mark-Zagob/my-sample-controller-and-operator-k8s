@@ -1,0 +1,8 @@
+apiVersion: vtdc.local/v1beta1
+kind: InforZ
+metadata:
+  name: my-inforz
+spec:
+  data: 25
+  personal: "Dzagob"
+  gitrepo: "https://github.com/Mark-Zagob/My-sample-project-01.git"

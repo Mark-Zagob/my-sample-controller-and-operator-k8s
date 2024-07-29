@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: api-watcher
+  name: api-watcher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-watcher
+  template:
+    metadata:
+      labels:
+        app: api-watcher
+    spec:
+      serviceAccountName: api-watcher-sa
+      containers:
+      - name: api-watcher
+        image: dzagob/python_controller:api-watcher
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1000Mi
+          requests:
+            cpu: 500m
+            memory: 1000Mi

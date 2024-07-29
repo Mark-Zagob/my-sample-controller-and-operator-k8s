@@ -1,0 +1,9 @@
+kubernetes
+pick
+requests
+gitpython
+kopf
+pyyaml
+jinja2
+aiofiles
+asyncio
